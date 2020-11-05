@@ -49,7 +49,7 @@ class FlatObsWrapper(gym.core.ObservationWrapper):
 def show_video():
     mp4list = glob.glob('video/*.mp4')
     if len(mp4list) > 0:
-        mp4 = mp4list[0]
+        mp4 = mp4list[-1]
         video = io.open(mp4, 'r+b').read()
         encoded = base64.b64encode(video)
         display.display(HTML(data='''<video alt="test" autoplay 
